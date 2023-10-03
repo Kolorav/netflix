@@ -1,0 +1,12 @@
+.search-box-container {
+  @apply w-fit h-full flex items-center text-base relative;
+}
+
+#search-input {
+  @apply w-[40px] h-[40px]  pointer-events-none rounded-full bg-gray-900 text-gray-500 text-xs font-semibold outline-none duration-200;
+}
+
+#search-reveal-btn {
+  @apply absolute h-[40px] w-[40px] top-[50%] left-0  items-center justify-center translate-y-[-50%];
+  display: flex !important;
+}

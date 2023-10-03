@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { FaBell, FaHouse } from "react-icons/fa6";
 import { PiTelevisionSimpleFill } from "react-icons/pi";
 import { BiSolidBookBookmark, BiSolidMoviePlay } from "react-icons/bi";
-import { FaSearch } from "react-icons/fa";
+import NavSearch from "../Nav-search/nav-search";
 
 const innerWidth = window.innerWidth;
 const innerHeight = window.innerHeight;
@@ -80,11 +80,7 @@ function Navigation() {
         Playlist
       </Link>
       <div className="navigation-right-section">
-        {pathname !== "/search" && (
-          <Link className="search-page-link" href="/search">
-            <FaSearch />
-          </Link>
-        )}
+        <NavSearch />
         <button
           style={notify ? { color: "#dc2626" } : {}}
           onClick={() => {
