@@ -1,0 +1,7 @@
+.avatar {
+  @apply h-[40px] w-[40px] text-2xl   rounded-full overflow-hidden relative flex justify-center items-center p-1;
+}
+
+.avatar-name {
+  @apply w-full h-full rounded-full flex justify-center items-center text-xs  bg-white dark:bg-black font-bold;
+}

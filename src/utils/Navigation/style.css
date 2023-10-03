@@ -1,0 +1,11 @@
+.navigation {
+  @apply w-full h-full flex items-center mx-4 gap-7;
+}
+
+.nav-link {
+  @apply flex items-center gap-2 font-semibold text-gray-600;
+}
+
+.navigation-right-section {
+  @apply flex-1 h-full flex items-center justify-end gap-7 text-xl text-white;
+}
