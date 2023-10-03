@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("@/utils/Header/header"), {
   ssr: false,
+  loading: () => <div style={{ height: "60px", width: "100%" }}></div>,
 });
 
 const font = Raleway({ subsets: ["latin"] });
