@@ -7,5 +7,5 @@
 }
 
 .navigation-right-section {
-  @apply flex-1 h-full flex items-center justify-end gap-7 text-xl text-white;
+  @apply flex-1 h-full flex items-center justify-end gap-7 text-xl;
 }

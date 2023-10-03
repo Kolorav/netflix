@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply w-screen h-screen flex flex-col items-center bg-white dark:bg-black dark:text-white;
+  @apply w-screen h-screen flex flex-col items-center bg-black text-white;
 }
 
 main {
