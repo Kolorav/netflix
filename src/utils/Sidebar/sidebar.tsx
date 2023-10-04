@@ -52,11 +52,6 @@ function Sidebar() {
 
   // Hooks - End
 
-  const currentPathStyle = {
-    color: "white",
-    fontWeight: 700,
-  };
-
   return dimensions.width > 1100 ? (
     ""
   ) : (
@@ -67,13 +62,13 @@ function Sidebar() {
           setOpen((current) => !current);
         }}
       >
-        {open ? <RxCross1 /> : <GiHamburgerMenu />}
+        {getHamburgericon(open)}
       </button>
       <div className="sidebar" id="sidebar">
         <Link
           className="side-nav-link"
           href="/"
-          style={pathname == "/" ? currentPathStyle : {}}
+          style={getStyle("/", pathname)}
           onClick={() => setOpen(false)}
         >
           <span>
@@ -84,7 +79,7 @@ function Sidebar() {
         <Link
           className="side-nav-link"
           href="/movies"
-          style={pathname == "/movies" ? currentPathStyle : {}}
+          style={getStyle("/movies", pathname)}
           onClick={() => setOpen(false)}
         >
           <span>
@@ -95,7 +90,7 @@ function Sidebar() {
         <Link
           className="side-nav-link"
           href="/shows"
-          style={pathname == "/shows" ? currentPathStyle : {}}
+          style={getStyle("/shows", pathname)}
           onClick={() => setOpen(false)}
         >
           <span>
@@ -106,7 +101,7 @@ function Sidebar() {
         <Link
           className="side-nav-link"
           href="/latest"
-          style={pathname == "/latest" ? currentPathStyle : {}}
+          style={getStyle("/latest", pathname)}
           onClick={() => setOpen(false)}
         >
           <span>
@@ -117,7 +112,7 @@ function Sidebar() {
         <Link
           className="side-nav-link"
           href="/watchlist"
-          style={pathname == "/watchlist" ? currentPathStyle : {}}
+          style={getStyle("/watchlist", pathname)}
           onClick={() => setOpen(false)}
         >
           <span>
@@ -128,6 +123,7 @@ function Sidebar() {
         <Link
           href="/notifications"
           className="side-nav-link"
+          style={getStyle("/notifications", pathname)}
           onClick={() => {
             setNotify(false);
             setOpen(false);
@@ -142,7 +138,7 @@ function Sidebar() {
           <Link
             href="/account"
             className="sidebar-account-link"
-            style={pathname == "/account" ? currentPathStyle : {}}
+            style={getStyle("/account", pathname)}
             onClick={() => setOpen(false)}
           >
             <Avatar />
@@ -155,3 +151,16 @@ function Sidebar() {
 }
 
 export default Sidebar;
+
+function getStyle(pathname: string, currentPathname: string) {
+  const currentPathStyle = {
+    color: "white",
+    fontWeight: 700,
+  };
+
+  return pathname === currentPathname ? currentPathStyle : {};
+}
+
+function getHamburgericon(open: boolean) {
+  return open ? <RxCross1 /> : <GiHamburgerMenu />;
+}
