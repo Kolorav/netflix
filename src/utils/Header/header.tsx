@@ -1,14 +1,23 @@
-import Image from "next/image";
 import "./style.css";
-import Navigation from "../Navigation/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const Navigation = dynamic(() => import("../Navigation/navigation"), {
+  ssr: false,
+});
+const Sidebar = dynamic(() => import("../Sidebar/sidebar"), {
+  ssr: false,
+});
 
 function Header() {
   return (
     <nav className="header">
-      <a href="/">
-        <Image src="/logo.png" alt="Netflix" height={40} width={100} />
-      </a>
+      <Link href="/">
+        <Image src="/logo.png" alt="Netflix" height={35} width={90} />
+      </Link>
       <Navigation />
+      <Sidebar />
     </nav>
   );
 }

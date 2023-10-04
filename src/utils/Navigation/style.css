@@ -3,7 +3,7 @@
 }
 
 .nav-link {
-  @apply flex items-center gap-2 font-semibold text-gray-600;
+  @apply flex items-center gap-2 text-sm font-semibold text-slate-400;
 }
 
 .navigation-right-section {

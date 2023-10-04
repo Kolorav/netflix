@@ -1,0 +1,23 @@
+.sidebar-btn {
+  @apply flex-1 flex items-center justify-end mb-2;
+}
+
+.sidebar {
+  @apply h-[calc(100vh_-_55px)] w-[0px] text-sm pt-3  min-w-0 max-w-[270px] flex flex-col gap-7 bg-black fixed top-[50px] right-[-40px] duration-300;
+}
+
+.sidebar span {
+  @apply text-2xl;
+}
+
+.side-nav-link {
+  @apply flex items-center gap-5 text-slate-400;
+}
+
+.sidebar-bottom-section {
+  @apply flex-1 flex items-end pb-5;
+}
+
+.sidebar-account-link {
+  @apply flex items-center gap-2 text-sm;
+}

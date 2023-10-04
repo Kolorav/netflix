@@ -19,7 +19,7 @@ function Navigation() {
     width: innerWidth,
     height: innerHeight,
   });
-  const [notify, setNotify] = useState(true);
+  const [notify, setNotify] = useState(false);
 
   const pathname = usePathname();
 
@@ -36,14 +36,19 @@ function Navigation() {
 
   // Hooks - End
 
-  return dimensions.width <= 1000 ? (
+  const currentPathStyle = {
+    color: "white",
+    fontWeight: 800,
+  };
+
+  return dimensions.width <= 1100 ? (
     ""
   ) : (
     <div className="navigation">
       <Link
         className="nav-link"
         href="/"
-        style={pathname == "/" ? { color: "white" } : {}}
+        style={pathname == "/" ? currentPathStyle : {}}
       >
         <FaHouse />
         Home
@@ -51,7 +56,7 @@ function Navigation() {
       <Link
         className="nav-link"
         href="/movies"
-        style={pathname == "/movies" ? { color: "white" } : {}}
+        style={pathname == "/movies" ? currentPathStyle : {}}
       >
         <BiSolidMoviePlay />
         Movies
@@ -59,29 +64,30 @@ function Navigation() {
       <Link
         className="nav-link"
         href="/shows"
-        style={pathname == "/shows" ? { color: "white" } : {}}
+        style={pathname == "/shows" ? currentPathStyle : {}}
       >
         <PiTelevisionSimpleFill /> Shows
       </Link>
       <Link
         className="nav-link"
         href="/latest"
-        style={pathname == "/latest" ? { color: "white" } : {}}
+        style={pathname == "/latest" ? currentPathStyle : {}}
       >
         <HiNewspaper />
         Latest
       </Link>
       <Link
         className="nav-link"
-        href="/playlist"
-        style={pathname == "/playlist" ? { color: "white" } : {}}
+        href="/watchlist"
+        style={pathname == "/watchlist" ? currentPathStyle : {}}
       >
         <BiSolidBookBookmark />
-        Playlist
+        Watchlist
       </Link>
       <div className="navigation-right-section">
         <NavSearch />
         <button
+          aria-label="notification"
           style={notify ? { color: "#dc2626" } : {}}
           onClick={() => {
             setNotify(false);
@@ -89,7 +95,7 @@ function Navigation() {
         >
           <FaBell />
         </button>
-        <button>
+        <button aria-label="user-account">
           <Avatar />
         </button>
       </div>

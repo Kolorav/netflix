@@ -60,6 +60,7 @@ function NavSearch() {
         <input
           type="text"
           id="search-input"
+          aria-label="search-field"
           placeholder={placeholder}
           onChange={(event: any) => {
             setQuery(event.target.value);
@@ -71,6 +72,7 @@ function NavSearch() {
         <button type="submit" hidden></button>
       </form>
       <button
+        aria-label="search-reveal"
         onClick={() => {
           setIsQuery(true);
         }}

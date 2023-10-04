@@ -1,12 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
-import dynamic from "next/dynamic";
-
-const Header = dynamic(() => import("@/utils/Header/header"), {
-  ssr: false,
-  loading: () => <div style={{ height: "60px", width: "100%" }}></div>,
-});
+import Header from "@/utils/Header/header";
 
 const font = Raleway({ subsets: ["latin"] });
 
